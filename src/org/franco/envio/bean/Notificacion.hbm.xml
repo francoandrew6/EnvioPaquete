@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.franco.envio.bean.Notificacion" table="notificacion">
+	    
+	    <id name="idNotificacion" type="java.lang.Integer">
+            <column name="idnotificacion" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="fecha" type="java.lang.String">
+            <column name="fecha" />
+        </property>
+        
+        <property name="mensaje" type="java.lang.String">
+            <column name="mensaje" />
+        </property>
+        
+        <many-to-one name="idEnvioPaquete" class="org.franco.envio.bean.EnvioPaquete">
+        	<column name="idenviopaquete"></column>
+        </many-to-one> 
+	</class>
+</hibernate-mapping>

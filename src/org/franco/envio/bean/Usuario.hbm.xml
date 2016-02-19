@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.franco.envio.bean.Usuario" table="usuario">
+	    
+	    <id name="idUsuario" type="java.lang.Integer">
+            <column name="idusuario" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="nombre" type="java.lang.String">
+            <column name="nombre" />
+        </property>
+       
+        <property name="nickname" type="java.lang.String">
+            <column name="nickname" />
+        </property>
+       
+        <property name="contraseña" type="java.lang.String">
+            <column name="contraseña" />
+        </property>
+       
+        <property name="correo" type="java.lang.String">
+            <column name="correo" />
+        </property>
+        
+        <property name="direccion" type="java.lang.String">
+            <column name="direccion" />
+        </property>
+        
+        <many-to-one name="idRol" class="org.franco.envio.bean.Rol" lazy="false">
+        		<column name="idRol"></column>
+        </many-to-one>
+	</class>
+</hibernate-mapping>

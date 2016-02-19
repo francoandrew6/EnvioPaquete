@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.franco.envio.bean.StockPaquete" table="stockpaquete">
+	    
+	    <id name="idStockPaquete" type="java.lang.Integer">
+            <column name="idstockpaquete" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="valorViaje" type="java.lang.Double">
+            <column name="valorviaje" />
+        </property>
+        
+        <property name="estado" type="java.lang.String">
+            <column name="estado" />
+        </property>
+        
+        <many-to-one name="idPaquete" class="org.franco.envio.bean.Paquete" lazy="false">
+        	<column name="idpaquete"></column>
+        </many-to-one>
+        
+	</class>
+</hibernate-mapping>

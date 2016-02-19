@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="org.franco.envio.bean.EnvioPaquete" table="enviopaquete">
+	    
+	    <id name="idEnvioPaquete" type="java.lang.Integer">
+            <column name="idenviopaquete" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="fechaenvio" type="java.lang.String">
+            <column name="fechaenvio" />
+        </property>
+        
+        <property name="fechaentrega" type="java.lang.String">
+            <column name="fechaentrega" />
+        </property>
+        
+        <property name="fecharetraso" type="java.lang.String">
+            <column name="fecharetraso" />
+        </property>
+        
+        <many-to-one name="idStockPaquete" class="org.franco.envio.bean.StockPaquete">
+        	<column name="idstockpaquete"></column>
+        </many-to-one>
+        
+        <many-to-one name="idUsuario" class="org.franco.envio.bean.Usuario">
+        	<column name="idusuario"></column>
+        </many-to-one> 
+	</class>
+</hibernate-mapping>
